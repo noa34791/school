@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>שייט בירקון</title>
+		<meta charset="UTF-8">
+	</head>
+	<body style="text-align:center;background-color:#80ffff; font-size:40px; color:#660066;" dir="rtl">
+		<script>
+
+			var numberOfPeople,// הגדרת משתנה - מספר האנשים
+			
+			numberOfBoats,// הגדרת משתנה - מספר הסירות
+			totalprice,// הגדרת משתנה - כמות הכסף הכוללת שיש לשלם
+			pricePerPerson,// הגדרת משתנה - סכום הכסף שעל כל אחד לשלם
+			
+			numberOfPeople = parseInt(window.prompt(" כמה אנשים אתם? "));// הגדרת ערך למשתנה של מספר האנשים - הקפצת הודעת שאלה למשתמש
+			
+			if (numberOfPeople<0) 
+			{
+				document.write ("הקלט אינו תקין תקין, אנא רענן את העמוד שנית, והכנס מספר אחר");
+				fail;
+			}
+			
+			if ((numberOfPeople%6)==0)// במידה ומספר האנשים מתחלק בדיוק ב-שש...
+				numberOfBoats = numberOfPeople/6;// הצבת ערך למשתנה - מספר הסירות שווה למס האנשים לחלק לשש
+			else // במידה והמספר אינו מתחלק בדיוק ב-שש...
+				numberOfBoats = parseInt((numberOfPeople/6) + 1);// הצבת ערך למשתנה - מספר האנשים לחלק לשש (מס הסירות) ועוד סירה אחת
+				
+			totalprice = (numberOfBoats*30);// המחיר הכולל- מספר הסירות כפול שלושים (המחיר לסירה אחת)
+			pricePerPerson = (totalprice/numberOfPeople).toFixed(2);// מחיר לאדם - המחיר הכולל לחלק למס האנשים
+			
+			document.write("<h1>שייט בנהר הירקון</h1>"+"<br>");
+			document.write ("מספר הסירות שתצטרכו הן:  " + numberOfBoats + "<br>");// הדפסה של מספר הסירות שיצטרכו
+			document.write ("אתם " + numberOfPeople + " אנשים " + "<br>");// הדפסה של מספר האנשים שהם
+			document.write ( "התשלום הכולל שלכם הוא:  " + totalprice + " שקלים " + "<br>");// הדפסה של הסכום הכולל לתשלום
+			document.write ( "התשלום שכל אחד מכם מתבקש לשלם: " + pricePerPerson + " שקלים " + "<br>");// הדפסה של המחיר לאדם
+
+		</script>
+	</body>
+</html>

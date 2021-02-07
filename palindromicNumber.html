@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>מספר פולינדרומי</title>
+		<meta charset="UTF-8">
+	</head>
+	<body style="text-align:center;background-color:#ffff99; font-size:40px; color:#660066;" dir="rtl">
+		<script>
+
+			var number,// הגדרת משתנה - מספר
+			firstDigit,// הגדרת משתנה - הספרה הראשונה
+			lastDigit,// הגדרת משתנה - הספרה האחרונה
+			
+			number = parseInt(window.prompt(" הקלד מספר תלת ספרתי "));//הצבת ערך למשתנה - הקפצת הודעה וקליטת מספר בעל 3 ספרות מהמשתמש
+			
+			if (number.toString().length != 3)
+			{
+				document.write ("הקלט אינו תקין תקין, אנא רענן את העמוד שנית, והכנס מספר אחר");
+				fail;
+			}
+			
+			firstDigit = parseInt (number/100);// הצבת ערך למשתנה - חלוקת המספר במאה כדי לקבל את הספרה הראשונה
+			lastDigit = parseInt (number%10);// הצבת ערך למשתנה - חלוקת המספר בעשר אך התוצאה תצא המספר שאחרי הנקודה - קבלת המספר השלישי
+			
+			if (firstDigit==lastDigit)// במידה והספרה האחרונה שווה לספרה האחרונה...
+				document.write ("המספר שלך הוא פולינדרומי");// הדפסה שאומרת שהמספר הור פולינדרומי
+			else // במידה והספרות לא שוות...
+				document.write ("המספר שלך הוא לא פולינדרומי");// הדפסה שאומרת שהמספר אינו פולינדרומי
+		</script>
+	</body>
+</html>
